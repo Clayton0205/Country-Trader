@@ -21,13 +21,12 @@ body {
     margin: auto;
     margin-bottom: 20px;
     text-align: center;
+    width: 237px;
 }
 
-#bar
+.select
 {
-    width: 200px;
-    height: 30px;
-   margin: auto;
+width: 25%;
 }
 
 #countrybox
