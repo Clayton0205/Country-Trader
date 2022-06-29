@@ -1,11 +1,37 @@
-*
-{
-margin: 0;
-padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
- 
 
-body
-{
-background-image: url(../assets/graph.jpg);
+
+body {
+    background-image: url(../assets/graph.jpg);
 }
+
+#image {
+    width: 300px;
+    height: 175px;
+}
+
+#searchbar
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#bar
+{
+    width: 200px;
+    height: 30px;
+   margin: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
