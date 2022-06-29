@@ -101,7 +101,7 @@ country.forEach(salestax => {
     countrybox.innerHTML +=
         `
     
-    <div class="container bg-primary my-3">
+    <div class="container bg-primary my-3"> 
     <div class="row mb-5 text-center">
     <h1>${salestax.name}</h1>  
     </div>
@@ -147,6 +147,4 @@ country.forEach(salestax => {
     </div>
     `
 });
-
-
 
