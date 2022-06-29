@@ -8,6 +8,14 @@ body {
     background-image: url(../assets/graph.jpg);
 }
 
+.landing
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
 #image {
     width: 300px;
     height: 175px;
