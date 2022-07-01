@@ -95,57 +95,59 @@ localStorage.setItem("country", JSON.stringify
 
 function showContainer(country){
 
-    country.forEach((country, index) => {
+    country.forEach((countries, index) => {
         document.querySelector('#container').innerHTML += 
         `
-        <div class="container"> 
-        <div class="row  text-center">
-        <h1>${country.name}</h1>  
-        </div>
-        <div class="row  text-center">
-        <img src="${country.Image}" id="image">
-        </div>
-        <div class="row  text-center">
-        <h3>
-        ${country.continent}
-        </h3>
-        </div>
-        <div class="row  text-center">
-         <h3>
-         ${country.price}
-         </h3>
-        </div>
-
-        <div class="row  text-center">
-        <div class="col-md-4">
-        <i class="fa-solid fa-person"></i>
-        ${country.population}
-        </div>
-        <div class="col-md-4">
-        <i class="fa-solid fa-mountain-sun"></i>
-        ${country.size}
-        </div>
-        <div class="col-md-4">
-        <i class="fa-solid fa-burger"></i>
-        ${country.McDonalds}
-        </div>
-        </div>
+        <div id="${index}">
         <div class="row">
-        <div class="col">
-        <button type="button"> <i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="col">
-        <button type="button"> <i class="fa-solid fa-circle-minus"></i></button>
-        </div>
-        <div class="col">
-        <i class="fa-solid fa-pen-to-square"></i>
-        
-        </div>
-        </div>
-        </div>
+            <div class="col-md-1">
+                <p>${countries.name}</p>
+            </div>
+            <div class="col-md-2">
+            <p>${countries.continent}</p>
+            </div>
+            <div class="col-md-1">
+            <p>${countries.price}</p>
+            </div>
+            <div class="col-md-1">
+            <p>${countries.population}</p>
+            </div>
+            <div class="col-md-1">
+            <p>${countries.size}</p>
+            </div>
+            <div class="col-md-1">
+            <p>${countries.McDonalds}</p>
+            </div>
+            <div class="col-md-2">
+            <i class="fa-solid fa-pen-to-square" onclick="editRecord(${index})" data-bs-toggle="modal" data-bs-target="#Modal2"></i>
+            <i class="fa-solid fa-trash" onclick="deleteRecord(${index})"></i>
+            </div>
         `
     })
 };
 
 showContainer(country);
+
+function modalAdd(){
+    let Name = document.querySelector('#Name').value;
+    let Continent = document.querySelector('#Continent').value;
+    let Price = document.querySelector('#Price').value;
+    let Population = document.querySelector('#population').value;
+    let McDonalds= document.querySelector('#McDonalds').value;
+
+    country.push(
+        {
+            name: Name,
+            continent: Continent,
+            Price: Price,
+            population: Population,
+            size: Size,
+            McDonalds: McDonalds
+        }
+    )
+    localStorage.setItem('country',JSON.stringify(country));
+    loadData(country);
+}
+
+document.querySelector('#addRecord').addEventListener('click',modalAdd);
 
