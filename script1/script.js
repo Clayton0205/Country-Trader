@@ -2,7 +2,7 @@ localStorage.setItem("country", JSON.stringify(country = [
     {
         name: "Argentina ",
         continent: "South-America",
-        price: "$383.1 billion",
+        price: "383.100 000 000",
         Image: "https://i.postimg.cc/VLHkx8KT/Argentina.png",
         population: "45.38 million",
         size: "2,78 million km²",
@@ -97,7 +97,8 @@ const countrybox = document.getElementById("countrybox");
 
 console.log(countries);
 
-country.forEach(salestax => {
+function loadData(war){
+war.forEach(salestax => {
     countrybox.innerHTML +=
         `
     
@@ -147,4 +148,15 @@ country.forEach(salestax => {
     </div>
     `
 });
+}
 
+function prices(event){
+    let newcountry = countries.filter(x => {
+        return x.price <= event.target.value
+    })
+    console.log(newcountry);
+    loadData(newcountry)
+}
+loadData(countries);
+
+document.querySelector('#price').addEventListener('change',prices);
