@@ -2,92 +2,92 @@ localStorage.setItem("country", JSON.stringify(country = [
     {
         name: "Argentina ",
         continent: "South-America",
-        price: "383.100 000 000",
+        price: 383100000000,
         Image: "https://i.postimg.cc/VLHkx8KT/Argentina.png",
-        population: "45.38 million",
-        size: "2,78 million km²",
-        McDonalds: "222"
+        population: 45380000,
+        size: 2780000,
+        McDonalds: 222
     },
     {
         name: "Canada",
         continent: "North-America",
-        price: "$1.64 trillion",
+        price: 1640000000000,
         Image: "https://i.postimg.cc/fTkwjPMv/canada.png",
-        population: "38.01 million",
-        size: "9,985 million km²",
-        McDonalds: "1,462"
+        population: 38010000,
+        size: 9985000,
+        McDonalds: 1462
     },
     {
         name: "India",
         continent: "Asia",
-        price: "$2.623 trillion",
+        price: 2623000000000,
         Image: 'https://i.postimg.cc/gcgzhpbJ/India.webp',
-        population: "1.38 billion",
-        size: "3,287 million km²",
-        McDonalds: "305"
+        population: 1380000000,
+        size: 3287000,
+        McDonalds: 305
     },
     {
         name: "Indonesia",
         continent: "Asia",
-        price: "$1.058 trillion",
+        price: 1058000000000,
         Image: "https://i.postimg.cc/xT79sPCV/Indonesia.png",
-        population: "273.5 million",
-        size: "7,81 million km²",
-        McDonalds: "227"
+        population: 273500000,
+        size: 7810000,
+        McDonalds: 227
     },
     {
         name: "Italy",
         continent: "Europe",
-        price: "$1.886 trillion",
+        price: 1886000000000,
         Image: "https://i.postimg.cc/htdcN7zz/Italy.png",
-        population: "59.55 million",
-        size: "301,230 km2",
-        McDonalds: "578"
+        population: 59550000,
+        size: 301230,
+        McDonalds: 578
     },
     {
         name: "Japan",
         continent: "Asia",
-        price: "$5.065 trillion",
+        price: 5065000000000,
         Image: "https://i.postimg.cc/PqnTHrY6/Japan.png",
-        population: "59.55 million",
-        size: "377 975 km²",
-        McDonalds: "2,900"
+        population: 59550000,
+        size: 377975,
+        McDonalds: 2900
     },
     {
         name: "Mexico",
         continent: "North-America",
-        price: "$1.076 trillion",
+        price: 1076000000000,
         Image: "https://i.postimg.cc/d33K67c0/Mexico.png",
-        population: "128.9 million",
-        size: "1,964 million km²",
-        McDonalds: "402"
+        population: 128900000,
+        size: 1964000,
+        McDonalds: 402
     },
     {
         name: "Republic of Korea",
         continent: "Asia",
-        price: "$1.631 trillion",
+        price: 1631000000000,
         Image: "https://i.postimg.cc/R019Z5Tv/Republic-of-Korea.png",
-        population: "51.78 million",
-        size: "100 210 km²",
-        McDonalds: "400"
+        population: 51780000,
+        size: 100210,
+        McDonalds: 400
     },
     {
         name: "South Africa",
         continent: "Africa",
-        price: "$301.9 billion",
+        price: 301900000000,
         Image: "https://i.postimg.cc/nz0Jq455/South-Africa.webp",
-        population: "59.31 million",
-        size: "1,219 million km²",
-        McDonalds: "145"
+        population: 59310000,
+        size: 1219000,
+        McDonalds: 145
     },
     {
         name: "Turkey",
         continent: "Europe",
-        price: "$720.1 billion",
+        price: 720100000000,
         Image: "https://i.postimg.cc/9MW248xZ/Turkey.png",
-        population: "84.34 million",
-        size: "783 562 km²",
-        McDonalds: "3,131"
+        population: 84340000,
+        size: 783562,
+        McDonalds: 3131
     },
 ])
 );
@@ -95,13 +95,11 @@ localStorage.setItem("country", JSON.stringify(country = [
 const countries = JSON.parse(localStorage.getItem("country"));
 const countrybox = document.getElementById("countrybox");
 
-console.log(countries);
-
 function loadData(war){
+    countrybox.innerHTML= ""
 war.forEach(salestax => {
     countrybox.innerHTML +=
         `
-    
     <div class="container bg-primary my-3"> 
     <div class="row mb-5 text-center">
     <h1>${salestax.name}</h1>  
@@ -144,19 +142,18 @@ war.forEach(salestax => {
     ${salestax.McDonalds}
     </div>
     </div>
-
     </div>
     `
 });
 }
 
 function prices(event){
+    console.log(event.target.value);
     let newcountry = countries.filter(x => {
         return x.price <= event.target.value
-    })
-    console.log(newcountry);
+    });
     loadData(newcountry)
 }
-loadData(countries);
+loadData(countries); 
 
 document.querySelector('#price').addEventListener('change',prices);
