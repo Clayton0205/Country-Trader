@@ -98,24 +98,25 @@ function showContainer(country){
     country.forEach((country, index) => {
         document.querySelector('#container').innerHTML += 
         `
-        <div class="container bg-primary my-3"> 
-        <div class="row mb-5 text-center">
+        <div class="container"> 
+        <div class="row  text-center">
         <h1>${country.name}</h1>  
         </div>
-        <div class="row mb-5 text-center">
+        <div class="row  text-center">
         <img src="${country.Image}" id="image">
         </div>
-        <div class="row mb-5 text-center">
+        <div class="row  text-center">
         <h3>
         ${country.continent}
         </h3>
         </div>
-        <div class="row mb-5 text-center">
+        <div class="row  text-center">
          <h3>
          ${country.price}
          </h3>
         </div>
-        <div class="row mb-5 text-center">
+
+        <div class="row  text-center">
         <div class="col-md-4">
         <i class="fa-solid fa-person"></i>
         ${country.population}
@@ -129,9 +130,22 @@ function showContainer(country){
         ${country.McDonalds}
         </div>
         </div>
+        <div class="row">
+        <div class="col">
+        <button type="button"> <i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="col">
+        <button type="button"> <i class="fa-solid fa-circle-minus"></i></button>
+        </div>
+        <div class="col">
+        <i class="fa-solid fa-pen-to-square"></i>
+        
+        </div>
+        </div>
         </div>
         `
     })
 };
 
 showContainer(country);
+
