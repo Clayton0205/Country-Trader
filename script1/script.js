@@ -185,4 +185,4 @@ function amounts(event){
 }
 loadData(countries); 
 
-document.querySelector('#amount').addEventListener('change',amounts);
+document.querySelector('#amount').addEventListener('change',amounts );
