@@ -148,7 +148,6 @@ war.forEach(salestax => {
 }
 
 function prices(event){
-    console.log(event.target.value);
     let newcountry = countries.filter(x => {
         return x.price <= event.target.value
     });
@@ -157,3 +156,33 @@ function prices(event){
 loadData(countries); 
 
 document.querySelector('#price').addEventListener('change',prices);
+
+function populations(event){
+    let newcountry = countries.filter(x => {
+        return x.population <= event.target.value
+    });
+    loadData(newcountry)
+}
+loadData(countries); 
+
+document.querySelector('#population').addEventListener('change',populations);
+
+function areas(event){
+    let newcountry = countries.filter(x => {
+        return x.size <= event.target.value
+    });
+    loadData(newcountry)
+}
+loadData(countries); 
+
+document.querySelector('#area').addEventListener('change',areas);
+
+function amounts(event){
+    let newcountry = countries.filter(x => {
+        return x.McDonalds <= event.target.value
+    });
+    loadData(newcountry)
+}
+loadData(countries); 
+
+document.querySelector('#amount').addEventListener('change',amounts);
